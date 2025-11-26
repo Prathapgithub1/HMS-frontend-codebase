@@ -11,11 +11,6 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-<<<<<<< HEAD
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-icons": "^5.5.0"
-=======
     "@heroicons/react": "^2.2.0",
     "@reduxjs/toolkit": "^2.10.1",
     "axios": "^1.13.2",
@@ -24,17 +19,13 @@
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.30.2"
->>>>>>> feature/login-fresh
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.17",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.22",
-<<<<<<< HEAD
-=======
     "buffer": "^6.0.3",
->>>>>>> feature/login-fresh
     "parcel": "^2.16.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
