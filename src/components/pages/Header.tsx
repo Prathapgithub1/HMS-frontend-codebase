@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Header = () => {
   return (
     <header className="bg-white shadow-md w-full fixed top-0 left-0 z-50">
@@ -22,32 +24,35 @@ export const Header = () => {
           </div>
           <div className="flex flex-col">
             <span className="text-xl font-bold text-gray-800">HMS</span>
-            <span className="text-xs text-gray-500 uppercase tracking-wider">
+            <span className="text-xs text-gray-1200 uppercase tracking-wider">
               Hospital Management System
             </span>
           </div>
         </div>
 
-        {/* Navigation Menu */}
+        {/* Navigation Links */}
         <nav className="hidden md:flex space-x-6 font-medium text-gray-700">
-          <a href="#home" className="hover:text-blue-600 transition-colors">
+          <Link to="#home" className="hover:text-blue-600 transition-colors">
             Home
-          </a>
-          <a href="#services" className="hover:text-blue-600 transition-colors">
+          </Link>
+          <Link
+            to="#services"
+            className="hover:text-blue-600 transition-colors"
+          >
             Services
-          </a>
-          <a href="#about" className="hover:text-blue-600 transition-colors">
+          </Link>
+          <Link to="#about" className="hover:text-blue-600 transition-colors">
             About Us
-          </a>
-          <a href="#contact" className="hover:text-blue-600 transition-colors">
+          </Link>
+          <Link to="#contact" className="hover:text-blue-600 transition-colors">
             Contact Us
-          </a>
-          <a href="#support" className="hover:text-blue-600 transition-colors">
+          </Link>
+          <Link to="#support" className="hover:text-blue-600 transition-colors">
             Support
-          </a>
-          <a href="#login" className="hover:text-blue-600 transition-colors">
+          </Link>
+          <Link to="/login" className="hover:text-blue-600 transition-colors">
             Login
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Icon (Optional) */}
