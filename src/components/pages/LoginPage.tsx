@@ -65,7 +65,7 @@ const LoginPage = () => {
     };
 
     const response = await axios.post(
-      "http://localhost:5000/api/auth/userLogin",
+      "http://34.224.66.27/api/auth/userLogin",
       {params:payload},
       {
         withCredentials: true,
