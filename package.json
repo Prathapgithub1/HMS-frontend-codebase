@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel app.html"
+    "start": "parcel app.html",
+       "build": "parcel build app.html --dist-dir build",
   },
   "keywords": [],
   "author": "",
