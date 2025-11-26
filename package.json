@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel app.html"
+    "start": "parcel app.html",
+    "build": "parcel build app.html --dist-dir build"
   },
   "keywords": [],
   "author": "",
@@ -20,15 +21,15 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.30.2"
   },
-"devDependencies": {
-  "@tailwindcss/postcss": "^4.1.17",
-  "@types/react": "^19.2.5",
-  "@types/react-dom": "^19.2.3",
-  "autoprefixer": "^10.4.22",
-  "buffer": "^6.0.3",
-  "parcel": "^2.16.1",
-  "postcss": "^8.5.6",
-  "tailwindcss": "^4.1.17",
-  "typescript": "^5.9.3"
-}
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "buffer": "^6.0.3",
+    "parcel": "^2.16.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
+  }
 }
