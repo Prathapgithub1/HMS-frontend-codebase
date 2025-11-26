@@ -51,53 +51,59 @@ const LoginPage = () => {
     return valid;
   };
   const dispatch = useDispatch();
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    setLoading(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!validateForm()) return;
 
-    try {
-      let payload: Object = {
-        params: {
-          email: email,
-          password: password,
-          role: role,
+  setLoading(true);
+
+  try {
+    const payload = {
+      email,
+      password,
+      role,
+    };
+
+    const response = await axios.post(
+      "http://localhost:5000/api/auth/userLogin",
+      {params:payload},
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
         },
-      };
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/userLogin",
-        payload
-      );
-      if (response.status === 200 && response.data.success === true) {
-        //store the token in redux store
-        dispatch(
-          setCredentials({
-            token: response.data.data[0].token,
-            userId: response.data.data[0].userId,
-            role: response.data.data[0].role,
-            userName: response.data.data[0].userName,
-            email: response.data.data[0].email,
-          })
-        );
-        localStorage.setItem("token", response.data.data[0]);
-        navigate("/dashboard");
-      } else {
-        alert("Invalid login credentials");
       }
+    );
 
-      console.log("API Response:", response.data);
-    } catch (err: unknown) {
-      if (axios.isAxiosError(err)) {
-        const message =
-          err.response?.data?.message || err.message || "Login failed";
-        alert(message);
-      } else {
-        alert("Login failed");
-      }
-    } finally {
-      setLoading(false);
+    if (response.status === 200 && response.data.success === true) {
+      const user = response.data.data[0];
+
+      dispatch(
+        setCredentials({
+          token: user.token,
+          userId: user.userId,
+          role: user.role,
+          userName: user.userName,
+          email: user.email,
+        })
+      );
+
+      localStorage.setItem("token", user.token);
+      navigate("/dashboard");
+    } else {
+      alert("Invalid login credentials");
     }
-  };
+  } catch (err: unknown) {
+    if (axios.isAxiosError(err)) {
+      alert(err.response?.data?.message || err.message);
+    } else {
+      alert("Login failed");
+    }
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
